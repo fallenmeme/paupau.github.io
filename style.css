@@ -6,88 +6,100 @@
 }
 
 body {
-    background: #f4f4f4;
-    color: #333;
+    background: #f3f3f3;
 }
 
-/* Navbar */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #222;
-    padding: 15px 40px;
+/* Hide Sections */
+.hidden {
+    display: none;
 }
 
-.navbar .logo {
-    color: #fff;
-    font-size: 24px;
-}
-
-.navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 25px;
-}
-
-.navbar ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.navbar ul li a:hover {
-    color: #00bfff;
-}
-
-/* Hero Section */
-.hero {
-    height: 90vh;
-    background: linear-gradient(to right, #1b1b1b, #333);
-    color: white;
+/* Form Pages */
+.form-page {
+    width: 350px;
+    margin: 120px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
     text-align: center;
-    padding-top: 120px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.hero .highlight {
-    color: #00bfff;
+.form-page input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
 }
 
-.btn {
-    margin-top: 25px;
-    padding: 12px 25px;
+.form-page button {
+    width: 95%;
+    padding: 12px;
     background: #00bfff;
     border: none;
-    color: #fff;
+    color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
-.btn:hover {
-    background: #008ccc;
+.form-page button:hover {
+    background: #0090c7;
 }
 
-/* Content Sections */
+.form-page a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #222;
+    color: white;
+    padding: 15px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logout-btn {
+    background: crimson;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background: darkred;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(to right, #1b1b1b, #333);
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+}
+
+.highlight {
+    color: #00bfff;
+}
+
+/* Portfolio Sections */
 .section {
-    padding: 60px 40px;
+    padding: 50px;
     text-align: center;
 }
 
-.section h2 {
-    margin-bottom: 20px;
-}
-
-/* Projects */
 .project-container {
     display: flex;
-    gap: 20px;
     justify-content: center;
+    gap: 20px;
     flex-wrap: wrap;
 }
 
 .project-card {
     background: white;
-    width: 280px;
+    width: 250px;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -95,8 +107,7 @@ body {
 
 footer {
     background: #222;
-    color: #fff;
-    text-align: center;
     padding: 15px;
-    margin-top: 20px;
+    color: white;
+    text-align: center;
 }
