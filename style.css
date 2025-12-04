@@ -1,113 +1,123 @@
+/* basic reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f3f3f3;
+  background: #f5f5f5;
+  color: #333;
 }
 
-/* Hide Sections */
+/* hide when needed */
 .hidden {
-    display: none;
+  display: none;
 }
 
-/* Form Pages */
-.form-page {
-    width: 350px;
-    margin: 120px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+/* AUTH container */
+#auth-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 120px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
 }
 
-.form-page input {
-    width: 90%;
-    padding: 10px;
-    margin: 10px 0;
+.auth-form input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #aaa;
+  border-radius: 4px;
 }
 
-.form-page button {
-    width: 95%;
-    padding: 12px;
-    background: #00bfff;
-    border: none;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
+.auth-form button {
+  width: 95%;
+  padding: 12px;
+  background: #007BFF;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.form-page button:hover {
-    background: #0090c7;
+.auth-form button:hover {
+  background: #0056b3;
 }
 
-.form-page a {
-    color: #00bfff;
-    text-decoration: none;
+.auth-form a {
+  color: #007BFF;
+  text-decoration: none;
 }
 
-/* NAVBAR */
+.auth-form p {
+  margin-top: 15px;
+}
+
+/* Portfolio page styling */
 .navbar {
-    background: #222;
-    color: white;
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  background: #222;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.logout-btn {
-    background: crimson;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
+.navbar .logo {
+  font-size: 24px;
 }
 
-.logout-btn:hover {
-    background: darkred;
+#logout-btn {
+  background: #d9534f;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-/* HERO */
+#logout-btn:hover {
+  background: #c9302c;
+}
+
 .hero {
-    background: linear-gradient(to right, #1b1b1b, #333);
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
+  background: #444;
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
 }
 
-.highlight {
-    color: #00bfff;
-}
-
-/* Portfolio Sections */
 .section {
-    padding: 50px;
-    text-align: center;
+  padding: 60px 20px;
+  text-align: center;
 }
 
-.project-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+.projects-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
 
 .project-card {
-    background: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background: white;
+  width: 260px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 footer {
-    background: #222;
-    padding: 15px;
-    color: white;
-    text-align: center;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
 }
