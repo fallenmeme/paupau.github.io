@@ -1,123 +1,115 @@
-/* basic reset */
+/* GLOBAL STYLES */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 body {
-  background: #f5f5f5;
-  color: #333;
+    background: #fff;
+    color: #222;
 }
 
-/* hide when needed */
+/* HIDDEN CLASS */
 .hidden {
-  display: none;
+    display: none;
 }
 
-/* AUTH container */
+/* AUTH FORMS */
 #auth-container {
-  width: 100%;
-  max-width: 400px;
-  margin: 120px auto;
-  padding: 20px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  text-align: center;
+    width: 360px;
+    margin: 120px auto;
 }
 
-.auth-form input {
-  width: 90%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #aaa;
-  border-radius: 4px;
+.form-box {
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    padding: 30px;
+    text-align: center;
 }
 
-.auth-form button {
-  width: 95%;
-  padding: 12px;
-  background: #007BFF;
-  border: none;
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
+.form-box input {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #aaa;
+    border-radius: 5px;
 }
 
-.auth-form button:hover {
-  background: #0056b3;
+.form-box button {
+    width: 95%;
+    padding: 12px;
+    background: #000;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
-.auth-form a {
-  color: #007BFF;
-  text-decoration: none;
+.form-box button:hover {
+    background: #333;
 }
 
-.auth-form p {
-  margin-top: 15px;
+.form-box a {
+    color: #0073e6;
+    text-decoration: none;
 }
 
-/* Portfolio page styling */
-.navbar {
-  background: #222;
-  color: white;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* PORTFOLIO STYLES */
+.hero-section {
+    background: #010101;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px;
+}
+.hero-section .highlight {
+    color: #00aaff;
+}
+.logout-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: crimson;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
 }
 
-.navbar .logo {
-  font-size: 24px;
-}
-
-#logout-btn {
-  background: #d9534f;
-  border: none;
-  color: white;
-  padding: 8px 15px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-#logout-btn:hover {
-  background: #c9302c;
-}
-
-.hero {
-  background: #444;
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-}
-
+/* ABOUT & WORK SECTIONS */
 .section {
-  padding: 60px 20px;
-  text-align: center;
+    padding: 80px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-
-.projects-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
+.about-section {
+    background: #f4f4f4;
+    text-align: center;
 }
-
+.work-section {
+    background: #fff;
+}
+.project-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 .project-card {
-  background: white;
-  width: 260px;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    background: #eaeaea;
+    width: 260px;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
+/* FOOTER */
+.footer-section {
+    background: #111;
+    color: #ddd;
+    padding: 18px 0;
+    text-align: center;
 }
