@@ -1,74 +1,85 @@
-// Show Register Page
-function showRegister() {
-    document.getElementById("login-page").classList.add("hidden");
-    document.getElementById("register-page").classList.remove("hidden");
+// Elements
+const loginForm = document.getElementById('login-form');
+const registerForm = document.getElementById('register-form');
+const authContainer = document.getElementById('auth-container');
+const portfolioPage = document.getElementById('portfolio-page');
+const userDisplay = document.getElementById('user-display');
+
+const showRegisterLink = document.getElementById('show-register');
+const showLoginLink = document.getElementById('show-login');
+const loginBtn = document.getElementById('login-btn');
+const registerBtn = document.getElementById('register-btn');
+const logoutBtn = document.getElementById('logout-btn');
+
+// Show register form
+showRegisterLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  loginForm.classList.add('hidden');
+  registerForm.classList.remove('hidden');
+});
+
+// Show login form
+showLoginLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  registerForm.classList.add('hidden');
+  loginForm.classList.remove('hidden');
+});
+
+// Register logic
+registerBtn.addEventListener('click', () => {
+  const u = document.getElementById('reg-username').value.trim();
+  const p = document.getElementById('reg-password').value;
+
+  if (!u || !p) {
+    alert('Fill all fields');
+    return;
+  }
+  if (localStorage.getItem('user_' + u)) {
+    alert('Username already taken');
+    return;
+  }
+  localStorage.setItem('user_' + u, p);
+  alert('Registration success! You can login now.');
+  registerForm.classList.add('hidden');
+  loginForm.classList.remove('hidden');
+});
+
+// Login logic
+loginBtn.addEventListener('click', () => {
+  const u = document.getElementById('login-username').value.trim();
+  const p = document.getElementById('login-password').value;
+
+  const stored = localStorage.getItem('user_' + u);
+  if (stored === null) {
+    alert('No such user. Register first.');
+    return;
+  }
+  if (stored !== p) {
+    alert('Wrong password');
+    return;
+  }
+  // success login
+  localStorage.setItem('loggedInUser', u);
+  showPortfolio(u);
+});
+
+// Logout logic
+logoutBtn.addEventListener('click', () => {
+  localStorage.removeItem('loggedInUser');
+  portfolioPage.classList.add('hidden');
+  authContainer.classList.remove('hidden');
+});
+
+// On page load: auto-login if already logged in
+window.addEventListener('load', () => {
+  const u = localStorage.getItem('loggedInUser');
+  if (u) {
+    showPortfolio(u);
+  }
+});
+
+function showPortfolio(username) {
+  userDisplay.textContent = username;
+  authContainer.classList.add('hidden');
+  portfolioPage.classList.remove('hidden');
 }
-
-// Show Login Page
-function showLogin() {
-    document.getElementById("register-page").classList.add("hidden");
-    document.getElementById("login-page").classList.remove("hidden");
-}
-
-// REGISTER
-function register() {
-    let username = document.getElementById("reg-username").value;
-    let password = document.getElementById("reg-password").value;
-
-    if (username === "" || password === "") {
-        alert("Please fill in all fields!");
-        return;
-    }
-
-    if (localStorage.getItem(username)) {
-        alert("This username is already taken!");
-        return;
-    }
-
-    localStorage.setItem(username, password);
-    alert("Registration successful! You can now log in.");
-    showLogin();
-}
-
-// LOGIN
-function login() {
-    let username = document.getElementById("login-username").value;
-    let password = document.getElementById("login-password").value;
-
-    let storedPass = localStorage.getItem(username);
-
-    if (storedPass === null) {
-        alert("Account not found. Please register.");
-        return;
-    }
-
-    if (storedPass !== password) {
-        alert("Incorrect password!");
-        return;
-    }
-
-    localStorage.setItem("loggedInUser", username);
-
-    showPortfolio();
-}
-
-// Show the Portfolio Page
-function showPortfolio() {
-    document.getElementById("login-page").classList.add("hidden");
-    document.getElementById("register-page").classList.add("hidden");
-    document.getElementById("portfolio-page").classList.remove("hidden");
-}
-
-// LOGOUT
-function logout() {
-    localStorage.removeItem("loggedInUser");
-    document.getElementById("portfolio-page").classList.add("hidden");
-    document.getElementById("login-page").classList.remove("hidden");
-}
-
-// Auto-login if user already logged in
-window.onload = () => {
-    if (localStorage.getItem("loggedInUser")) {
-        showPortfolio();
-    }
-};
